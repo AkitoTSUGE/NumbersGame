@@ -1,0 +1,96 @@
+body {
+  background: #ccc;
+  color: black;
+  font-family: 'Courier New', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+}
+
+
+#container {
+  background: rgb(252, 237, 171);
+  /*50px * 2 + 10px * 2*/
+  margin: 16px auto;
+  padding: 0 24px;
+  /* padding-bottom: 0; */
+  border: 5px solid rgb(121, 15, 15);
+  box-shadow: 3px 3px 2px rgb(34, 0, 0);
+  border-radius: 5px;
+  
+}
+
+#level {
+  width: 80px;
+  margin: 10px 0;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background: rgb(252, 240, 187);
+  border: 2.5px outset  rgb(14, 114, 22)
+}
+
+#board {
+  list-style: none;/*liの黒丸（●）を取る*/
+  margin: 0 0 8px;
+  padding: 10px 5px;
+  padding-bottom: 14px;
+  background: rgb(115, 136, 110);
+  border-radius: 4px;
+  display: flex;/*liを横並びにする*/
+  flex-wrap: wrap;/*liがboardである親要素からはみ出しそうになったら折り返す*/
+  border: 5px inset silver;
+   /* box-sizing: unset; */
+
+}
+#board li {/*数字が入るボタンにスタイリング*/
+  background: #5f5f5f;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  box-shadow: 0 4px 0 #464646;
+}
+
+#board li.pressed {/*boardのliに対してpressedクラスがついた時*/
+  background: rgb(66, 66, 66);
+  box-shadow: none;
+  margin-top: 9px;/*元々5pxなので、4px下に下げる*/
+  margin-bottom: 1px;/*元々5pxなので、4px上に上げる*/
+}
+
+#timer {
+  margin: 0 auto;
+  margin-bottom: 8px;
+  width: 50%;
+  font-size: 20px;
+  background: rgb(252, 240, 187);
+  text-align: center;
+  border: 4px outset rgb(121, 15, 15);
+}
+
+#btn {
+  cursor: pointer;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background: #bb2015;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 0 #861810;
+}
+
+#btn:active {/*javaScriptで設定しなくても;activeをつければクリックしたときにこの設定になる*/
+  margin-top: 12px;/*boardのmargin-bottomがあるのでずらす分と8pxが必要box-shadowが4pxなので、8+4で12pxにする*/
+  box-shadow: none;
+  margin-bottom: 26px;
+}
+
+.displayNone {
+  display: none;
+}
+
